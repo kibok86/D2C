@@ -22,32 +22,9 @@ from pipeline.generator         import generate
 LOG_FILE = ROOT / "data" / "publish_log.json"
 
 
-def send_via_stibee(html_path: Path, issue_num: int) -> dict:
-    api_key    = os.environ.get("STIBEE_API_KEY","")
-    list_id    = os.environ.get("STIBEE_LIST_ID_FREE","")
-    from_email = os.environ.get("DTC_FROM_EMAIL","newsletter@desertocape.com")
-    if not api_key or not list_id:
-        print("  -- STIBEE_API_KEY 또는 LIST_ID 미설정 -> 발송 스킵")
-        return {"skipped": True}
-    subject = f"[Desert to Cape #{issue_num:03d}] MEA 물류.무역 주간 브리핑"
-    preview = "이번 주 아시아-걸프 운임, 선사 스케줄, 항만 현황, 지정학 리스크 정리"
-    html    = html_path.read_text(encoding="utf-8")
-    headers = {"AccessToken": api_key, "Content-Type": "application/json"}
-    base    = "https://api.stibee.com/v1"
-    payload = {
-        "name": subject, "subject": subject,
-        "fromName": "Desert to Cape", "fromEmail": from_email,
-        "previewText": preview, "contentType": "html",
-        "content": html, "listIds": [list_id],
-    }
-    r = requests.post(f"{base}/emails", headers=headers, json=payload, timeout=30)
-    r.raise_for_status()
-    email_id = r.json().get("id","")
-    print(f"  -- 스티비 등록: id={email_id}")
-    r2 = requests.post(f"{base}/emails/{email_id}/send", headers=headers, timeout=15)
-    r2.raise_for_status()
-    print(f"  -- 발송 완료")
-    return {"email_id": email_id, "status": "sent"}
+def send_via_resend(html_path: Path, issue_num: int) -> dict:
+    from pipeline.stibee import publish_issue
+    return publish_issue(html_path, issue_num)
 
 
 def _save_log(issue_num, entry):
@@ -99,11 +76,11 @@ def run(issue_num: int, dry_run: bool, skip_scrape: bool):
     print("\n[3/4] HTML 생성...")
     generate(payload, commentary, issue_num, out_html)
 
-    print(f"\n[4/4] 스티비 발송{'  [SKIPPED]' if dry_run else '...'}")
+    print(f"\n[4/4] Resend 발송{'  [SKIPPED]' if dry_run else '...'}")
     send_result = {}
     if not dry_run:
         try:
-            send_result = send_via_stibee(out_html, issue_num)
+            send_result = send_via_resend(out_html, issue_num)
         except Exception as e:
             print(f"  -- 실패: {e}"); send_result = {"error": str(e)}
     else:

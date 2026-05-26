@@ -66,10 +66,10 @@ PYEOF
 
       - name: 🚀 뉴스레터 발행
         env:
-          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
-          STIBEE_API_KEY:      ${{ secrets.STIBEE_API_KEY }}
-          STIBEE_LIST_ID_FREE: ${{ secrets.STIBEE_LIST_ID_FREE }}
-          DTC_FROM_EMAIL:      ${{ secrets.DTC_FROM_EMAIL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM:    ${{ secrets.RESEND_FROM }}
+          RESEND_TO:      ${{ secrets.RESEND_TO }}
         run: |
           ISSUE="${{ steps.issue.outputs.issue_num }}"
           DRY="${{ steps.issue.outputs.dry_run }}"
