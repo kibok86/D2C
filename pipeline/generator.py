@@ -780,13 +780,18 @@ def _tv_region_cards(regions: list) -> str:
     html = ""
     for r in regions:
         risk = r.get("risk","")
+        risk_badge = (
+            f'<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:700;'
+            f'padding:2px 8px;border-radius:4px;font-family:\'JetBrains Mono\',monospace;">⚠ {risk}</span>'
+            if risk else ''
+        )
         html += f"""
 <div style="padding:14px 0;border-bottom:1px solid #F5F2EE;">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
     <span style="font-weight:700;font-size:14px;color:var(--deep);">
       {r.get('region','')}
     </span>
-    {f'<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;font-family:\'JetBrains Mono\',monospace;">⚠ {risk}</span>' if risk else ''}
+    {risk_badge}
   </div>
   <div style="font-size:14px;color:#444;font-weight:300;line-height:1.6;">
     {r.get('key_metric','')}
