@@ -51,17 +51,7 @@ jobs:
             echo "issue_num=${{ github.event.inputs.issue_num }}" >> $GITHUB_OUTPUT
             echo "dry_run=${{ github.event.inputs.dry_run }}"     >> $GITHUB_OUTPUT
           else
-            # 창간일(2026-06-02)부터 경과 일수로 호수 계산 (테스트 기간: 매일 카운트)
-            python3 - << 'PYEOF'
-import os
-from datetime import date
-start = date(2026, 6, 2)
-today = date.today()
-issue_num = max(1, (today - start).days + 1)
-with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-    f.write(f"issue_num={issue_num}\n")
-    f.write("dry_run=false\n")
-PYEOF
+            python3 -c "import os; from datetime import date; s=date(2026,6,2); t=date.today(); n=max(1,(t-s).days+1); open(os.environ['GITHUB_OUTPUT'],'a').write(f'issue_num={n}\ndry_run=false\n')"
           fi
 
       - name: 🚀 뉴스레터 발행
