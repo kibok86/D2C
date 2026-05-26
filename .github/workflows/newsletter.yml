@@ -66,7 +66,7 @@ PYEOF
 
       - name: 🚀 뉴스레터 발행
         env:
-          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
           STIBEE_API_KEY:      ${{ secrets.STIBEE_API_KEY }}
           STIBEE_LIST_ID_FREE: ${{ secrets.STIBEE_LIST_ID_FREE }}
           DTC_FROM_EMAIL:      ${{ secrets.DTC_FROM_EMAIL }}

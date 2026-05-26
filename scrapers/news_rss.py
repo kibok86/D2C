@@ -84,9 +84,9 @@ class NewsScraper(BaseScraper):
         return items
 
     def _batch_translate(self, items: list[dict]) -> list[dict]:
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        api_key = os.environ.get("GEMINI_API_KEY", "")
         if not api_key:
-            print("  -- 번역 스킵 (ANTHROPIC_API_KEY 미설정)")
+            print("  -- 번역 스킵 (GEMINI_API_KEY 미설정)")
             return items
 
         # 캐시 적용
@@ -114,21 +114,16 @@ class NewsScraper(BaseScraper):
         )
         try:
             resp = requests.post(
-                "https://api.anthropic.com/v1/messages",
-                headers={
-                    "x-api-key": api_key,
-                    "anthropic-version": "2023-06-01",
-                    "content-type": "application/json",
-                },
+                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}",
+                headers={"content-type": "application/json"},
                 json={
-                    "model": "claude-sonnet-4-20250514",
-                    "max_tokens": 2000,
-                    "messages": [{"role": "user", "content": prompt}],
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"maxOutputTokens": 2000},
                 },
                 timeout=30,
             )
             resp.raise_for_status()
-            raw = resp.json()["content"][0]["text"].strip().replace("```json","").replace("```","").strip()
+            raw = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip().replace("```json","").replace("```","").strip()
             translations = {t["id"]: t["ko"] for t in json.loads(raw)}
             for i, item in enumerate(to_translate):
                 ko = translations.get(i, "")
