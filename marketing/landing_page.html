@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desert to Cape — MEA 물류·무역 주간 브리핑</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #C9A96E;
+    --sand-light: #E8D5B0;
+    --deep: #1A1A2E;
+    --rust: #C0392B;
+    --cream: #FAF6F0;
+    --muted: #8A8A8A;
+    --border: #E8E0D4;
+    --ink: #2C2C3E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--deep);
+    font-family: 'Source Sans 3', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── 애니메이션 ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+  }
+  @keyframes pulse-ring {
+    0%   { transform: scale(1);   opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.25s; }
+  .d3 { animation-delay: 0.4s; }
+  .d4 { animation-delay: 0.55s; }
+  .d5 { animation-delay: 0.7s; }
+
+  /* ── 히어로 ── */
+  .hero {
+    background: var(--deep);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* 배경 텍스처 */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(201,169,110,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* 그리드 오버레이 */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '——';
+    margin: 0 12px;
+    opacity: 0.4;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-title em {
+    color: var(--sand);
+    font-style: normal;
+    display: block;
+  }
+
+  .hero-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 2vw, 18px);
+    color: #9BA3B0;
+    margin-top: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--sand);
+    margin: 32px auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 구독 폼 */
+  .subscribe-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,169,110,0.25);
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+  }
+
+  .subscribe-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .subscribe-box p {
+    font-size: 14px;
+    color: #9BA3B0;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .email-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,169,110,0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .email-input::placeholder { color: rgba(255,255,255,0.3); }
+  .email-input:focus { border-color: var(--sand); }
+
+  .subscribe-btn {
+    padding: 14px 28px;
+    background: var(--sand);
+    border: none;
+    border-radius: 8px;
+    color: var(--deep);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .subscribe-btn:hover {
+    background: var(--sand-light);
+    transform: translateY(-1px);
+  }
+
+  .privacy-note {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* 통계 바 */
+  .stat-bar {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--sand);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: #9BA3B0;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* ── 콘텐츠 미리보기 ── */
+  .preview {
+    padding: 96px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--deep);
+    margin-bottom: 48px;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .content-card {
+    background: #fff;
+    padding: 32px;
+    transition: background 0.2s;
+  }
+
+  .content-card:hover { background: var(--cream); }
+
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--sand);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .card-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .tag-auto { background: #E8F5E9; color: #2E7D32; }
+  .tag-manual { background: #FFF3CD; color: #856404; }
+
+  /* ── 독자 대상 섹션 ── */
+  .audience {
+    background: var(--deep);
+    padding: 96px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .audience::before {
+    content: 'MEA';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 280px;
+    font-weight: 900;
+    color: rgba(201,169,110,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .audience-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .audience .section-title { color: #fff; }
+  .audience .section-eyebrow { color: var(--sand); }
+
+  .audience-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .audience-item {
+    border: 1px solid rgba(201,169,110,0.2);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .audience-item::before {
+    content: '✓';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--sand);
+    font-size: 14px;
+  }
+
+  .audience-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .audience-item p {
+    font-size: 13px;
+    color: #9BA3B0;
+    line-height: 1.5;
+  }
+
+  /* ── CTA 하단 ── */
+  .cta-bottom {
+    padding: 96px 24px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-bottom .section-title { margin-bottom: 16px; }
+
+  .cta-bottom p {
+    font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  .cta-inline {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-email-input {
+    padding: 16px 20px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--deep);
+    background: #fff;
+    outline: none;
+    width: 280px;
+    transition: border-color 0.2s;
+  }
+
+  .cta-email-input:focus { border-color: var(--sand); }
+
+  .cta-btn {
+    padding: 16px 32px;
+    background: var(--deep);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Source Sans 3', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .cta-btn:hover {
+    background: var(--sand);
+    color: var(--deep);
+    transform: translateY(-1px);
+  }
+
+  /* ── 푸터 ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--deep);
+    margin-bottom: 8px;
+  }
+
+  .footer-logo span { color: var(--sand); }
+
+  footer p {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── 라이브 인디케이터 ── */
+  .live-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--sand);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .live-dot::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: #4CAF50;
+    border-radius: 50%;
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(76,175,80,0.6);
+  }
+
+  /* 반응형 */
+  @media (max-width: 640px) {
+    .stat-bar { gap: 24px; }
+    .subscribe-box { padding: 24px; }
+    .input-row { flex-direction: column; }
+    .email-input, .subscribe-btn { width: 100%; }
+    .cta-inline { flex-direction: column; align-items: center; }
+    .cta-email-input { width: 100%; max-width: 360px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ 히어로 ════════ -->
+<section class="hero">
+
+  <div class="live-dot fade-up d1">매주 수요일 발행</div>
+
+  <div class="hero-eyebrow fade-up d1">Weekly MEA Intelligence</div>
+
+  <h1 class="hero-title fade-up d2">
+    Desert
+    <em>to Cape</em>
+  </h1>
+
+  <p class="hero-sub fade-up d3">
+    걸프부터 남아공까지 — 중동·아프리카 무역·물류·가전 주간 브리핑
+  </p>
+
+  <div class="hero-divider fade-up d3"></div>
+
+  <div class="subscribe-box fade-up d4">
+    <h2>무료로 구독하기</h2>
+    <p>
+      매주 수요일 아침, 실무에 바로 쓸 수 있는<br>
+      MEA 시장 인사이트를 받아보세요.
+    </p>
+    <div class="input-row">
+      <input
+        type="email"
+        class="email-input"
+        placeholder="your@email.com"
+        id="heroEmail"
+      >
+      <button class="subscribe-btn" onclick="handleSubscribe('heroEmail')">
+        구독 시작 →
+      </button>
+    </div>
+    <p class="privacy-note">스팸 없음 · 언제든 수신 거부 가능 · 무료</p>
+  </div>
+
+  <div class="stat-bar fade-up d5">
+    <div class="stat-item">
+      <div class="stat-num">17</div>
+      <div class="stat-label">MEA 노선 커버</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">출발지 (부산·중국·인도네시아·이집트)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-label">항만 혼잡도 실시간 모니터</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">선사 스케줄 트래킹</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 콘텐츠 미리보기 ════════ -->
+<section class="preview">
+  <div class="section-eyebrow">매주 이런 내용을 보내드립니다</div>
+  <h2 class="section-title">실무에서 바로 쓰는<br>7개 섹션</h2>
+
+  <div class="content-grid">
+    <div class="content-card">
+      <div class="card-num">00</div>
+      <div class="card-title">글로벌 운임지수</div>
+      <div class="card-desc">SCFI·WCI·FBX·BDI 4대 지수 + 전주비·전월비 비교. 스파크라인으로 8주 추세 시각화.</div>
+      <span class="card-tag tag-auto">✓ 자동수집</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">01</div>
+      <div class="card-title">운임 동향</div>
+      <div class="card-desc">부산·중국·인도네시아·이집트 → 걸프·아프리카 17개 노선 FAK + 리드타임 + 항로 현황.</div>
+      <span class="card-tag tag-manual">⚠ 주간 입력</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">02</div>
+      <div class="card-title">선사 스케줄</div>
+      <div class="card-desc">MSC·COSCO·HMM·Evergreen 선복률 바 차트 + GRI·우회·증편 변경사항 알림.</div>
+      <span class="card-tag tag-auto">✓ 자동+수동</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">03</div>
+      <div class="card-title">항만 현황</div>
+      <div class="card-desc">두바이·담맘·몸바사·더반 등 8개 항만 혼잡도 링 게이지 + 체선일 현황.</div>
+      <span class="card-tag tag-auto">✓ 자동+수동</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">04</div>
+      <div class="card-title">환율 동향</div>
+      <div class="card-desc">NGN·KES·ZAR·EGP·TRY 전주비·전월비 자동 계산. 고정 페그 통화 제외.</div>
+      <span class="card-tag tag-auto">✓ 자동수집</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">05</div>
+      <div class="card-title">지정학 브리핑</div>
+      <div class="card-desc">중동·아프리카·해운 헤드라인 AI 한글 번역 + 원문 링크. 리스크 레벨 표시.</div>
+      <span class="card-tag tag-auto">✓ 자동수집</span>
+    </div>
+    <div class="content-card">
+      <div class="card-num">07</div>
+      <div class="card-title">현지 유통 스냅샷</div>
+      <div class="card-desc">extra.com 기준 사우디 삼성·LG·TCL·Hisense 실시간 유통가 비교.</div>
+      <span class="card-tag tag-auto">✓ 자동수집</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 독자 대상 ════════ -->
+<section class="audience">
+  <div class="audience-inner">
+    <div class="section-eyebrow">이런 분께 맞습니다</div>
+    <h2 class="section-title">MEA 시장을 다루는<br>모든 실무자를 위해</h2>
+
+    <div class="audience-list">
+      <div class="audience-item">
+        <h3>물류·포워더 담당자</h3>
+        <p>운임 모니터링, GRI 선제 대응, 선사 협상 타이밍을 잡아야 하는 분</p>
+      </div>
+      <div class="audience-item">
+        <h3>가전 수출 MD</h3>
+        <p>중동·아프리카 현지 유통가와 경쟁사 포지셔닝을 추적해야 하는 분</p>
+      </div>
+      <div class="audience-item">
+        <h3>무역·조달 담당자</h3>
+        <p>MEA 시장 진출을 준비하거나 기존 바이어 관리를 강화하는 분</p>
+      </div>
+      <div class="audience-item">
+        <h3>스타트업·사업개발</h3>
+        <p>중동·아프리카 시장 데이터가 필요한 창업가나 투자자</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════ 하단 CTA ════════ -->
+<section class="cta-bottom">
+  <div class="section-eyebrow">지금 시작하세요</div>
+  <h2 class="section-title">창간호, 지금 무료로<br>받아보세요</h2>
+  <p>
+    별도 가입 없이 이메일 하나로 시작합니다.<br>
+    언제든 수신 거부 가능합니다.
+  </p>
+  <div class="cta-inline">
+    <input
+      type="email"
+      class="cta-email-input"
+      placeholder="이메일 주소 입력"
+      id="ctaEmail"
+    >
+    <button class="cta-btn" onclick="handleSubscribe('ctaEmail')">
+      무료 구독 →
+    </button>
+  </div>
+</section>
+
+
+<!-- ════════ 푸터 ════════ -->
+<footer>
+  <div class="footer-logo">Desert <span>to</span> Cape</div>
+  <p>매주 수요일 발행 · 스팸 없음 · 언제든 수신 거부 가능</p>
+</footer>
+
+
+<script>
+function handleSubscribe(inputId) {
+  const input = document.getElementById(inputId);
+  const email = input.value.trim();
+  if (!email || !email.includes('@')) {
+    input.style.borderColor = '#C0392B';
+    input.focus();
+    return;
+  }
+  // 스티비 연동 시 여기에 API 호출 삽입
+  // 현재는 확인 메시지 표시
+  const btn = input.nextElementSibling;
+  btn.textContent = '✓ 등록 완료!';
+  btn.style.background = '#2E7D32';
+  btn.style.color = '#fff';
+  input.value = '';
+  input.style.borderColor = '#2E7D32';
+  setTimeout(() => {
+    btn.textContent = '구독 시작 →';
+    btn.style.background = '';
+    btn.style.color = '';
+    input.style.borderColor = '';
+  }, 3000);
+}
+
+// 엔터키 구독
+document.querySelectorAll('.email-input, .cta-email-input').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter') el.nextElementSibling.click();
+  });
+});
+
+// 스크롤 애니메이션
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  }),
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll('.content-card, .audience-item, .stat-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,966 @@
+{
+  "generated_at": "2026-05-25T09:00:00Z",
+  "issue": 1,
+  "sources": {
+    "extra.com": {
+      "source": "extra.com",
+      "region": "Saudi Arabia",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 8,
+      "data": [
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "Samsung",
+          "name": "Samsung 65\" OLED S95D 4K Smart TV 2026",
+          "size_inch": 65,
+          "price_sar": 8999
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "Samsung",
+          "name": "Samsung 55\" QLED Q80D 4K Smart TV",
+          "size_inch": 55,
+          "price_sar": 4299
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "LG",
+          "name": "LG 65\" OLED C4 evo 4K Smart TV 2026",
+          "size_inch": 65,
+          "price_sar": 7999
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "LG",
+          "name": "LG 55\" QNED85 4K Smart TV",
+          "size_inch": 55,
+          "price_sar": 3799
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "TCL",
+          "name": "TCL 65\" QLED C645 4K Google TV",
+          "size_inch": 65,
+          "price_sar": 3299
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "TCL",
+          "name": "TCL 55\" UHD P735 4K Android TV",
+          "size_inch": 55,
+          "price_sar": 1799
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "Hisense",
+          "name": "Hisense 65\" ULED U7K Mini LED 4K TV",
+          "size_inch": 65,
+          "price_sar": 3999
+        },
+        {
+          "source": "extra.com",
+          "region": "Saudi Arabia",
+          "fetched_at": "2026-05-25",
+          "brand": "Hisense",
+          "name": "Hisense 55\" A7K 4K Smart TV",
+          "size_inch": 55,
+          "price_sar": 1999
+        }
+      ]
+    },
+    "RSS News": {
+      "source": "RSS News",
+      "region": "MEA",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 8,
+      "data": [
+        {
+          "source": "Reuters",
+          "region": "Middle East",
+          "fetched_at": "2026-05-25",
+          "title": "Red Sea shipping attacks prompt carriers to extend Cape of Good Hope diversions through Q3",
+          "title_ko": "홍해 선박 공격 지속으로 주요 선사들, 희망봉 우회 항로 3분기까지 연장 결정",
+          "url": "https://www.reuters.com/business/red-sea-shipping",
+          "published": "2026-05-24"
+        },
+        {
+          "source": "Arab News",
+          "region": "Middle East",
+          "fetched_at": "2026-05-25",
+          "title": "Saudi Vision 2030 manufacturing incentives attract major electronics assembly investments",
+          "title_ko": "사우디 Vision 2030 제조업 인센티브, 글로벌 가전 조립 투자 유치에 성과",
+          "url": "https://www.arabnews.com/vision-2030",
+          "published": "2026-05-23"
+        },
+        {
+          "source": "Reuters",
+          "region": "Middle East",
+          "fetched_at": "2026-05-25",
+          "title": "Hormuz Strait traffic resumes after brief disruption, war risk insurance premiums remain elevated",
+          "title_ko": "호르무즈 해협 항행 재개됐으나 전쟁위험 보험료는 여전히 높은 수준 유지",
+          "url": "https://www.reuters.com/world/middle-east",
+          "published": "2026-05-22"
+        },
+        {
+          "source": "BBC Africa",
+          "region": "Africa",
+          "fetched_at": "2026-05-25",
+          "title": "Mombasa port expansion nears completion, to boost East Africa logistics capacity by 40%",
+          "title_ko": "몸바사 항만 확장 공사 완공 임박, 동아프리카 물류 처리 용량 40% 증가 전망",
+          "url": "https://www.bbc.co.uk/news/world/africa",
+          "published": "2026-05-24"
+        },
+        {
+          "source": "Reuters",
+          "region": "Africa",
+          "fetched_at": "2026-05-25",
+          "title": "Nigeria's naira stabilizes at NGN 1,580/USD after central bank intervention",
+          "title_ko": "나이지리아 중앙은행 개입으로 나이라 환율 1,580나이라/달러 선에서 안정세",
+          "url": "https://www.reuters.com/world/africa",
+          "published": "2026-05-23"
+        },
+        {
+          "source": "Google News",
+          "region": "Africa",
+          "fetched_at": "2026-05-25",
+          "title": "TCL expands official distribution network in West Africa with new Nigeria partnership",
+          "title_ko": "TCL, 나이지리아 신규 파트너십 체결로 서아프리카 공식 유통망 확대",
+          "url": "#",
+          "published": "2026-05-22"
+        },
+        {
+          "source": "TradeWinds",
+          "region": "Shipping",
+          "fetched_at": "2026-05-25",
+          "title": "Asia-Gulf container rates rise 12% as carriers announce July GRI of $300-400 per TEU",
+          "title_ko": "아시아-걸프 컨테이너 운임 12% 급등, 선사들 7월 TEU당 $300~400 GRI 예고",
+          "url": "https://www.tradewindsnews.com",
+          "published": "2026-05-24"
+        },
+        {
+          "source": "Lloyd's List",
+          "region": "Shipping",
+          "fetched_at": "2026-05-25",
+          "title": "MSC and Evergreen adjust Asia-Africa schedules amid continued Red Sea uncertainty",
+          "title_ko": "MSC·에버그린, 홍해 불안 지속에 아시아-아프리카 노선 스케줄 조정 단행",
+          "url": "https://lloydslist.com",
+          "published": "2026-05-23"
+        }
+      ]
+    },
+    "FX Rates": {
+      "source": "FX Rates",
+      "region": "MEA",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 5,
+      "data": [
+        {
+          "source": "FX API",
+          "region": "Nigeria",
+          "fetched_at": "2026-05-25",
+          "currency": "NGN",
+          "name": "나이지리아 나이라",
+          "usd_rate": 1582.5,
+          "week_change_pct": -1.24,
+          "month_change_pct": -3.8
+        },
+        {
+          "source": "FX API",
+          "region": "Kenya",
+          "fetched_at": "2026-05-25",
+          "currency": "KES",
+          "name": "케냐 실링",
+          "usd_rate": 129.4,
+          "week_change_pct": 0.18,
+          "month_change_pct": 0.42
+        },
+        {
+          "source": "FX API",
+          "region": "South Africa",
+          "fetched_at": "2026-05-25",
+          "currency": "ZAR",
+          "name": "남아공 랜드",
+          "usd_rate": 18.62,
+          "week_change_pct": 1.05,
+          "month_change_pct": 2.37
+        },
+        {
+          "source": "FX API",
+          "region": "Egypt",
+          "fetched_at": "2026-05-25",
+          "currency": "EGP",
+          "name": "이집트 파운드",
+          "usd_rate": 49.85,
+          "week_change_pct": 0.62,
+          "month_change_pct": 1.95
+        },
+        {
+          "source": "FX API",
+          "region": "Turkey",
+          "fetched_at": "2026-05-25",
+          "currency": "TRY",
+          "name": "터키 리라",
+          "usd_rate": 32.18,
+          "week_change_pct": 1.83,
+          "month_change_pct": 4.21
+        }
+      ]
+    },
+    "freight": {
+      "source": "freight_rates.json",
+      "region": "MEA",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 17,
+      "gri_notice": "MSC·COSCO 7월 1일부로 Asia-Gulf GRI $350/TEU 적용 예정 — 6월 3주차 전 선복 확보 권장",
+      "source_note": "Freightos + 선사 공지 기준",
+      "market_conditions": [
+        {
+          "icon": "🔴",
+          "title": "홍해 우회 항로 연장 (3분기까지)",
+          "body": "주요 선사 전원 희망봉(Cape of Good Hope) 경유 유지. 유럽·아시아 간 평균 리드타임 10~14일 추가 발생. 단기 정상화 가능성 낮음.",
+          "color": "#C0392B"
+        },
+        {
+          "icon": "🟡",
+          "title": "선복 가용성: 걸프 노선 타이트",
+          "body": "UAE·사우디 방면 선복률 약 88~92%. GRI 이전 스팟 부킹 창구 좁아지는 중. East Africa는 상대적으로 여유 있음.",
+          "color": "#E67E22"
+        },
+        {
+          "icon": "🟢",
+          "title": "남아공 더반 항만: 처리 정상화",
+          "body": "3월 항만 혼잡 이후 체선 해소 완료. 더반 항 평균 대기시간 1.2일로 정상 수준 회복. South Africa 방면 운임 소폭 하락.",
+          "color": "#2E7D32"
+        }
+      ],
+      "data": [
+        {
+          "fak_usd": 2450,
+          "prev_usd": 2270,
+          "transit_days": 22,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": "",
+          "origin": "부산",
+          "dest": "두바이 (UAE)"
+        },
+        {
+          "fak_usd": 2380,
+          "prev_usd": 2230,
+          "transit_days": 24,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": "",
+          "origin": "부산",
+          "dest": "담맘 (Saudi Arabia)"
+        },
+        {
+          "fak_usd": 2200,
+          "prev_usd": 2220,
+          "transit_days": 25,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": "",
+          "origin": "부산",
+          "dest": "도하 (Qatar)"
+        },
+        {
+          "fak_usd": 1980,
+          "prev_usd": 1890,
+          "transit_days": 28,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": "케이프 우회로 리드타임 +8일",
+          "origin": "부산",
+          "dest": "몸바사 (Kenya)"
+        },
+        {
+          "fak_usd": 1750,
+          "prev_usd": 1810,
+          "transit_days": 26,
+          "status": "정상",
+          "via": "",
+          "note": "항만 혼잡 해소",
+          "origin": "부산",
+          "dest": "더반 (South Africa)"
+        },
+        {
+          "fak_usd": 2100,
+          "prev_usd": 2050,
+          "transit_days": 30,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": "",
+          "origin": "부산",
+          "dest": "라고스 (Nigeria)"
+        },
+        {
+          "origin": "중국",
+          "dest": "두바이 (UAE)",
+          "fak_usd": 1950,
+          "prev_usd": 1820,
+          "transit_days": 18,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": ""
+        },
+        {
+          "origin": "중국",
+          "dest": "담맘 (Saudi Arabia)",
+          "fak_usd": 1880,
+          "prev_usd": 1750,
+          "transit_days": 20,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": ""
+        },
+        {
+          "origin": "중국",
+          "dest": "몸바사 (Kenya)",
+          "fak_usd": 1650,
+          "prev_usd": 1590,
+          "transit_days": 24,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": ""
+        },
+        {
+          "origin": "중국",
+          "dest": "더반 (South Africa)",
+          "fak_usd": 1420,
+          "prev_usd": 1480,
+          "transit_days": 22,
+          "status": "정상",
+          "via": "",
+          "note": ""
+        },
+        {
+          "origin": "인도네시아",
+          "dest": "두바이 (UAE)",
+          "fak_usd": 1680,
+          "prev_usd": 1600,
+          "transit_days": 16,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": ""
+        },
+        {
+          "origin": "인도네시아",
+          "dest": "담맘 (Saudi Arabia)",
+          "fak_usd": 1620,
+          "prev_usd": 1550,
+          "transit_days": 18,
+          "status": "우회",
+          "via": "Cape of Good Hope",
+          "note": ""
+        },
+        {
+          "origin": "인도네시아",
+          "dest": "더반 (South Africa)",
+          "fak_usd": 1280,
+          "prev_usd": 1310,
+          "transit_days": 20,
+          "status": "정상",
+          "via": "",
+          "note": ""
+        },
+        {
+          "origin": "이집트",
+          "dest": "두바이 (UAE)",
+          "fak_usd": 820,
+          "prev_usd": 790,
+          "transit_days": 7,
+          "status": "정상",
+          "via": "",
+          "note": "수에즈 운하 직항"
+        },
+        {
+          "origin": "이집트",
+          "dest": "담맘 (Saudi Arabia)",
+          "fak_usd": 780,
+          "prev_usd": 760,
+          "transit_days": 8,
+          "status": "정상",
+          "via": "",
+          "note": "수에즈 운하 직항"
+        },
+        {
+          "origin": "이집트",
+          "dest": "몸바사 (Kenya)",
+          "fak_usd": 950,
+          "prev_usd": 920,
+          "transit_days": 10,
+          "status": "정상",
+          "via": "",
+          "note": ""
+        },
+        {
+          "origin": "이집트",
+          "dest": "더반 (South Africa)",
+          "fak_usd": 1100,
+          "prev_usd": 1080,
+          "transit_days": 14,
+          "status": "정상",
+          "via": "",
+          "note": ""
+        }
+      ]
+    },
+    "Freight Index": {
+      "source": "Freight Index",
+      "region": "Global",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 4,
+      "data": [
+        {
+          "source": "Freight Index",
+          "region": "Global",
+          "fetched_at": "2026-05-25",
+          "name": "SCFI",
+          "full_name": "Shanghai Containerized Freight Index",
+          "unit": "pt",
+          "desc": "상하이 발 컨테이너 종합운임지수",
+          "value": 1842.3,
+          "week_change_pct": 4.2,
+          "month_change_pct": 11.7,
+          "data_source": "SSE"
+        },
+        {
+          "source": "Freight Index",
+          "region": "Global",
+          "fetched_at": "2026-05-25",
+          "name": "WCI",
+          "full_name": "Drewry World Container Index",
+          "unit": "$/FEU",
+          "desc": "글로벌 8개 주요 노선 평균 운임",
+          "value": 4218.0,
+          "week_change_pct": 3.8,
+          "month_change_pct": 9.4,
+          "data_source": "Drewry"
+        },
+        {
+          "source": "Freight Index",
+          "region": "Global",
+          "fetched_at": "2026-05-25",
+          "name": "FBX",
+          "full_name": "Freightos Baltic Index",
+          "unit": "$/FEU",
+          "desc": "글로벌 컨테이너 운임 종합지수",
+          "value": 3950.0,
+          "week_change_pct": 2.9,
+          "month_change_pct": 8.1,
+          "data_source": "Freightos"
+        },
+        {
+          "source": "Freight Index",
+          "region": "Global",
+          "fetched_at": "2026-05-25",
+          "name": "BDI",
+          "full_name": "Baltic Dry Index",
+          "unit": "pt",
+          "desc": "건화물 해운 운임지수",
+          "value": 1124.0,
+          "week_change_pct": -1.2,
+          "month_change_pct": 3.5,
+          "data_source": "Baltic Exchange"
+        }
+      ]
+    },
+    "Port Status": {
+      "source": "Port Status",
+      "region": "MEA",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 8,
+      "data": [
+        {
+          "source": "Port Status",
+          "region": "Origin",
+          "fetched_at": "2026-05-25",
+          "port": "Busan",
+          "port_ko": "부산",
+          "country": "Korea",
+          "congestion_pct": 42,
+          "wait_days": 0.8,
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "note": "",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "Origin",
+          "fetched_at": "2026-05-25",
+          "port": "Shanghai",
+          "port_ko": "상하이",
+          "country": "China",
+          "congestion_pct": 58,
+          "wait_days": 1.2,
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "note": "",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "Gulf",
+          "fetched_at": "2026-05-25",
+          "port": "Dubai",
+          "port_ko": "두바이 (제벨알리)",
+          "country": "UAE",
+          "congestion_pct": 71,
+          "wait_days": 2.1,
+          "status": "주의",
+          "status_color": "#E67E22",
+          "note": "GRI 전 선적 집중",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "Gulf",
+          "fetched_at": "2026-05-25",
+          "port": "Dammam",
+          "port_ko": "담맘 (킹압둘라)",
+          "country": "Saudi Arabia",
+          "congestion_pct": 65,
+          "wait_days": 1.8,
+          "status": "주의",
+          "status_color": "#E67E22",
+          "note": "",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "Med/Transit",
+          "fetched_at": "2026-05-25",
+          "port": "PortSaid",
+          "port_ko": "포트사이드",
+          "country": "Egypt",
+          "congestion_pct": 48,
+          "wait_days": 1.0,
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "note": "수에즈 직항 유지",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "East Africa",
+          "fetched_at": "2026-05-25",
+          "port": "Mombasa",
+          "port_ko": "몸바사",
+          "country": "Kenya",
+          "congestion_pct": 55,
+          "wait_days": 1.5,
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "note": "항만 확장 완공 임박",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "South Africa",
+          "fetched_at": "2026-05-25",
+          "port": "Durban",
+          "port_ko": "더반",
+          "country": "South Africa",
+          "congestion_pct": 38,
+          "wait_days": 0.7,
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "note": "혼잡 해소 완료",
+          "auto_sourced": false
+        },
+        {
+          "source": "Port Status",
+          "region": "West Africa",
+          "fetched_at": "2026-05-25",
+          "port": "Lagos",
+          "port_ko": "라고스 (아파파)",
+          "country": "Nigeria",
+          "congestion_pct": 82,
+          "wait_days": 3.4,
+          "status": "혼잡",
+          "status_color": "#C0392B",
+          "note": "나이라 약세로 수입 집중",
+          "auto_sourced": false
+        }
+      ]
+    },
+    "Carrier Schedule": {
+      "source": "Carrier Schedule",
+      "region": "MEA",
+      "fetched_at": "2026-05-25T09:00:00Z",
+      "status": "ok",
+      "count": 6,
+      "data": [
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "MSC",
+          "carrier_color": "#FF6B35",
+          "service": "MUSTANG",
+          "route_ko": "아시아 → 걸프 (UAE·사우디)",
+          "frequency": "주 1회",
+          "capacity_pct": 91,
+          "change_type": "GRI",
+          "change_icon": "📢",
+          "change_color": "#C0392B",
+          "change_bg": "#FFEBEE",
+          "change_detail": "7월 1일 $350/TEU GRI 적용 예정",
+          "effective_date": "2026-07-01",
+          "status": "예정",
+          "status_color": "#E67E22",
+          "has_news": true
+        },
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "COSCO",
+          "carrier_color": "#E63946",
+          "service": "MEX",
+          "route_ko": "아시아 → 중동·동아프리카",
+          "frequency": "주 1회",
+          "capacity_pct": 88,
+          "change_type": "우회",
+          "change_icon": "🔄",
+          "change_color": "#E67E22",
+          "change_bg": "#FFF3E0",
+          "change_detail": "홍해 우회 → 케이프타운 경유 유지 (3Q까지)",
+          "effective_date": "2026-06-01",
+          "status": "진행중",
+          "status_color": "#C0392B",
+          "has_news": true
+        },
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "HMM",
+          "carrier_color": "#2196F3",
+          "service": "GAX",
+          "route_ko": "부산·중국 → 걸프 (오만·UAE·사우디)",
+          "frequency": "주 1회",
+          "capacity_pct": 85,
+          "change_type": "스케줄",
+          "change_icon": "📅",
+          "change_color": "#1565C0",
+          "change_bg": "#E3F2FD",
+          "change_detail": "부산 ETD 매주 화요일 → 목요일 변경",
+          "effective_date": "2026-06-15",
+          "status": "예정",
+          "status_color": "#E67E22",
+          "has_news": false
+        },
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "Evergreen",
+          "carrier_color": "#4CAF50",
+          "service": "AEX",
+          "route_ko": "아시아 → 이집트·지중해",
+          "frequency": "주 2회",
+          "capacity_pct": 72,
+          "change_type": "정상",
+          "change_icon": "✅",
+          "change_color": "#2E7D32",
+          "change_bg": "#E8F5E9",
+          "change_detail": "수에즈 운하 직항 유지, 스케줄 변동 없음",
+          "effective_date": "",
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "has_news": false
+        },
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "CMA CGM",
+          "carrier_color": "#9C27B0",
+          "service": "AFRICA EXPRESS",
+          "route_ko": "아시아 → 서아프리카 (나이지리아·가나)",
+          "frequency": "격주",
+          "capacity_pct": 78,
+          "change_type": "스케줄",
+          "change_icon": "📅",
+          "change_color": "#1565C0",
+          "change_bg": "#E3F2FD",
+          "change_detail": "라고스 입항 격주 → 주 1회 증편 (7월)",
+          "effective_date": "2026-07-01",
+          "status": "예정",
+          "status_color": "#E67E22",
+          "has_news": false
+        },
+        {
+          "source": "Carrier Schedule",
+          "region": "MEA",
+          "fetched_at": "2026-05-25",
+          "carrier": "ONE",
+          "carrier_color": "#FF9800",
+          "service": "IEX",
+          "route_ko": "아시아 → 인도·중동·동아프리카",
+          "frequency": "주 1회",
+          "capacity_pct": 80,
+          "change_type": "정상",
+          "change_icon": "✅",
+          "change_color": "#2E7D32",
+          "change_bg": "#E8F5E9",
+          "change_detail": "스케줄 정상 운영",
+          "effective_date": "",
+          "status": "정상",
+          "status_color": "#2E7D32",
+          "has_news": false
+        }
+      ]
+    },
+    "TV Market": {
+      "source": "TV Market",
+      "region": "MEA",
+      "fetched_at": "2026-06-04T09:00:00Z",
+      "status": "ok",
+      "count": 20,
+      "source_note": "GfK MEA 분기 리포트 + 현지 유통 파트너 피드백 기반",
+      "period": "2026 Q2",
+      "data": [
+        {
+          "type": "brand",
+          "brand": "Samsung",
+          "segment": "Premium",
+          "hero_model": "OLED S95D",
+          "hero_category": "OLED",
+          "market_share_pct": 38,
+          "trend": "up",
+          "price_index": 113,
+          "regions": [
+            "Saudi Arabia",
+            "UAE",
+            "Nigeria"
+          ],
+          "note": "S95D 중동 출시 후 OLED 점유율 확대 중"
+        },
+        {
+          "type": "brand",
+          "brand": "LG",
+          "segment": "Premium",
+          "hero_model": "OLED C4",
+          "hero_category": "OLED",
+          "market_share_pct": 29,
+          "trend": "flat",
+          "price_index": 100,
+          "regions": [
+            "Saudi Arabia",
+            "UAE",
+            "Kenya"
+          ],
+          "note": "OLED 고점, QNED 라인업으로 중가 방어"
+        },
+        {
+          "type": "brand",
+          "brand": "TCL",
+          "segment": "Mid-Value",
+          "hero_model": "QLED C645",
+          "hero_category": "QLED",
+          "market_share_pct": 14,
+          "trend": "up",
+          "price_index": 42,
+          "regions": [
+            "Nigeria",
+            "Kenya",
+            "South Africa"
+          ],
+          "note": "나이지리아 공식 유통망 신규 파트너십 체결"
+        },
+        {
+          "type": "brand",
+          "brand": "Hisense",
+          "segment": "Value",
+          "hero_model": "ULED U7K",
+          "hero_category": "MiniLED",
+          "market_share_pct": 11,
+          "trend": "up",
+          "price_index": 48,
+          "regions": [
+            "Kenya",
+            "South Africa",
+            "Egypt"
+          ],
+          "note": "동아프리카 점유율 전분기比 +3%p"
+        },
+        {
+          "type": "brand",
+          "brand": "Sony",
+          "segment": "Ultra Premium",
+          "hero_model": "Bravia 9",
+          "hero_category": "MiniLED",
+          "market_share_pct": 5,
+          "trend": "flat",
+          "price_index": 145,
+          "regions": [
+            "UAE",
+            "Saudi Arabia"
+          ],
+          "note": ""
+        },
+        {
+          "type": "category",
+          "category": "OLED",
+          "trend": "up",
+          "note": "프리미엄 수요 견조, 삼성·LG 경쟁 심화"
+        },
+        {
+          "type": "category",
+          "category": "QLED/QNED",
+          "trend": "up",
+          "note": "중동 중가 시장 주력, 삼성 Q80D·LG QNED85 경쟁"
+        },
+        {
+          "type": "category",
+          "category": "MiniLED",
+          "trend": "up",
+          "note": "Hisense·TCL 공격적 진입, YoY 40%+ 성장"
+        },
+        {
+          "type": "category",
+          "category": "UHD",
+          "trend": "flat",
+          "note": "보급형 수요 안정적, 가격 압박 지속"
+        },
+        {
+          "type": "category",
+          "category": "FHD",
+          "trend": "down",
+          "note": "UHD 전환 가속화로 수요 감소"
+        },
+        {
+          "type": "region",
+          "region": "Saudi Arabia",
+          "key_metric": "Vision 2030 소비재 내수 확대 정책으로 프리미엄 TV 수요 증가세",
+          "risk": "7월 관세 개편 모니터링 필요"
+        },
+        {
+          "type": "region",
+          "region": "UAE",
+          "key_metric": "두바이 여름 쇼핑 시즌 앞두고 프리미엄 프로모션 경쟁 심화",
+          "risk": ""
+        },
+        {
+          "type": "region",
+          "region": "Nigeria",
+          "key_metric": "나이라 약세로 수입가 압박, 가성비 브랜드(TCL·Hisense) 수혜",
+          "risk": "환율 변동성 지속 주의"
+        },
+        {
+          "type": "region",
+          "region": "Kenya",
+          "key_metric": "몸바사 항만 확장 완공 후 물류비 절감 → 현지가 하락 기대",
+          "risk": ""
+        },
+        {
+          "type": "news",
+          "title": "Samsung expands OLED lineup in Saudi Arabia ahead of Eid promotions",
+          "title_ko": "삼성, 이드 프로모션 앞두고 사우디 OLED 라인업 확대",
+          "source": "Arab News",
+          "region": "MEA",
+          "published": "2026-06-03",
+          "brands": [
+            "Samsung"
+          ],
+          "categories": [
+            "OLED"
+          ],
+          "url": "#"
+        },
+        {
+          "type": "news",
+          "title": "LG Electronics reports strong Q2 MEA TV sales driven by premium OLED demand",
+          "title_ko": "LG전자, 프리미엄 OLED 수요에 힘입어 MEA 2분기 TV 판매 호조",
+          "source": "GfK MEA",
+          "region": "MEA",
+          "published": "2026-06-02",
+          "brands": [
+            "LG"
+          ],
+          "categories": [
+            "OLED"
+          ],
+          "url": "#"
+        },
+        {
+          "type": "news",
+          "title": "TCL signs new distribution partnership in Nigeria to expand West Africa presence",
+          "title_ko": "TCL, 나이지리아 신규 유통 파트너십 체결로 서아프리카 시장 확대",
+          "source": "Reuters Africa",
+          "region": "MEA",
+          "published": "2026-06-01",
+          "brands": [
+            "TCL"
+          ],
+          "categories": [],
+          "url": "#"
+        },
+        {
+          "type": "news",
+          "title": "Hisense Mini LED TV gains market share in East Africa as Mombasa port logistics improve",
+          "title_ko": "히센스 미니LED, 몸바사 물류 개선에 힘입어 동아프리카 점유율 확대",
+          "source": "Business Daily Africa",
+          "region": "MEA",
+          "published": "2026-05-31",
+          "brands": [
+            "Hisense"
+          ],
+          "categories": [
+            "MiniLED"
+          ],
+          "url": "#"
+        },
+        {
+          "type": "news",
+          "title": "MiniLED TV shipments to MEA surpass OLED for first time in Q1 2026",
+          "title_ko": "미니LED TV, 2026 1분기 MEA 출하량에서 처음으로 OLED 추월",
+          "source": "Display Supply Chain",
+          "region": "MEA",
+          "published": "2026-05-30",
+          "brands": [],
+          "categories": [
+            "MiniLED",
+            "OLED"
+          ],
+          "url": "#"
+        },
+        {
+          "type": "news",
+          "title": "Saudi Arabia's Vision 2030 consumer spending drive boosts premium electronics demand",
+          "title_ko": "사우디 Vision 2030 소비 진작 정책, 프리미엄 가전 수요 견인",
+          "source": "Arab News",
+          "region": "MEA",
+          "published": "2026-05-29",
+          "brands": [],
+          "categories": [],
+          "url": "#"
+        }
+      ]
+    }
+  }
+}

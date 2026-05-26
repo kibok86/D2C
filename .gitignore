@@ -1,0 +1,18 @@
+# 환경변수 (절대 커밋 금지)
+.env
+*.env
+
+# 파이썬 캐시
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# 생성된 뉴스레터 HTML (아티팩트로 관리)
+newsletter_*.html
+
+# 파이프라인 임시 출력
+data/pipeline_output.json
+
+# 로컬 테스트 데이터
+*.log

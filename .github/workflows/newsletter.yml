@@ -1,0 +1,94 @@
+name: 🗞 Desert to Cape — 데일리 테스트 발행 (테스트 기간)
+
+on:
+  schedule:
+    - cron: '0 22 * * *'       # 매일 07:00 KST (UTC 22:00) ← 테스트 완료 후 '0,2,4'로 복원
+  workflow_dispatch:
+    inputs:
+      issue_num:
+        description: '발행 호수'
+        required: true
+        default: '1'
+      dry_run:
+        description: '발송 없이 HTML만 (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: 📥 체크아웃
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 의존성 설치
+        run: pip install -r requirements.txt
+
+      - name: 💾 캐시 복원
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/translation_cache.json
+            data/fx_history.json
+            data/freight_index_history.json
+          key: dtc-cache-${{ github.run_number }}
+          restore-keys: dtc-cache-
+
+      - name: 🔢 발행 호수 계산 (데일리 테스트 기준)
+        id: issue
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "issue_num=${{ github.event.inputs.issue_num }}" >> $GITHUB_OUTPUT
+            echo "dry_run=${{ github.event.inputs.dry_run }}"     >> $GITHUB_OUTPUT
+          else
+            # 창간일(2026-06-02)부터 경과 일수로 호수 계산 (테스트 기간: 매일 카운트)
+            python3 - << 'PYEOF'
+import os
+from datetime import date
+start = date(2026, 6, 2)
+today = date.today()
+issue_num = max(1, (today - start).days + 1)
+with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+    f.write(f"issue_num={issue_num}\n")
+    f.write("dry_run=false\n")
+PYEOF
+          fi
+
+      - name: 🚀 뉴스레터 발행
+        env:
+          ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
+          STIBEE_API_KEY:      ${{ secrets.STIBEE_API_KEY }}
+          STIBEE_LIST_ID_FREE: ${{ secrets.STIBEE_LIST_ID_FREE }}
+          DTC_FROM_EMAIL:      ${{ secrets.DTC_FROM_EMAIL }}
+        run: |
+          ISSUE="${{ steps.issue.outputs.issue_num }}"
+          DRY="${{ steps.issue.outputs.dry_run }}"
+          [ "$DRY" = "true" ] && \
+            python publish.py --issue $ISSUE --dry-run || \
+            python publish.py --issue $ISSUE
+
+      - name: 📎 HTML 아티팩트 저장
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-${{ steps.issue.outputs.issue_num }}
+          path: newsletter_*.html
+          retention-days: 90
+
+      - name: 💾 데이터 히스토리 커밋
+        run: |
+          git config user.name  "DTC Bot"
+          git config user.email "bot@desertocape.com"
+          git add data/ || true
+          git diff --staged --quiet || \
+            git commit -m "📊 Issue #${{ steps.issue.outputs.issue_num }} 데이터 업데이트"
+          git push || true

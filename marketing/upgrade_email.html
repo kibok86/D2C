@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+:root{--sand:#C9A96E;--deep:#1A1A2E;--cream:#FAF6F0;--border:#E8E0D4;}
+body{background:var(--cream);font-family:'Georgia',serif;margin:0;padding:0;}
+.wrap{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--border);}
+.header{background:var(--deep);padding:32px 40px;text-align:center;}
+.logo{font-size:24px;font-weight:900;color:#fff;letter-spacing:-1px;}
+.logo span{color:var(--sand);}
+.body{padding:40px;}
+h1{font-size:24px;color:var(--deep);margin-bottom:16px;line-height:1.3;}
+p{font-size:15px;color:#444;line-height:1.8;margin-bottom:16px;}
+.highlight{background:#FDF8F0;border-left:4px solid var(--sand);padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;}
+.highlight p{margin:0;font-size:14px;color:#555;}
+.perks{list-style:none;padding:0;margin:20px 0;}
+.perks li{padding:8px 0;border-bottom:1px solid var(--border);font-size:14px;color:#333;}
+.perks li::before{content:'✓ ';color:var(--sand);font-weight:700;}
+.cta-btn{display:block;text-align:center;background:var(--deep);color:#fff;padding:16px;border-radius:8px;text-decoration:none;font-size:16px;font-weight:600;margin:32px 0;}
+.price{text-align:center;font-size:13px;color:#999;margin-top:-20px;margin-bottom:24px;}
+.footer{background:var(--cream);border-top:1px solid var(--border);padding:20px 40px;text-align:center;font-size:11px;color:#999;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="logo">Desert <span>to</span> Cape</div>
+  </div>
+  <div class="body">
+    <h1>{{subscriber_name}}님, 4회 연속 오픈하셨네요 👋</h1>
+    <p>Desert to Cape를 꾸준히 읽어주셔서 감사합니다.</p>
+    <p>열독자분들께 프로 구독을 소개드립니다.</p>
+
+    <div class="highlight">
+      <p>지금 <strong>얼리버드 특가</strong>로 첫 3개월 30% 할인 중입니다.<br>
+      월 9,900원 → <strong>월 6,930원</strong> (3개월 한정)</p>
+    </div>
+
+    <p><strong>프로 구독자 혜택:</strong></p>
+    <ul class="perks">
+      <li>주간 데이터 원본 Excel 파일 (운임·환율·지수 전체)</li>
+      <li>월 1회 MEA 시장 심층 리포트 (20페이지+)</li>
+      <li>운임 급등·GRI 발표 시 즉시 알림 이메일</li>
+      <li>구독자 전용 질문 채널 (주 1회 답변)</li>
+    </ul>
+
+    <a href="{{upgrade_url}}" class="cta-btn">프로 구독 시작하기 →</a>
+    <p class="price">월 6,930원 (얼리버드 3개월) · 이후 월 9,900원 · 언제든 해지 가능</p>
+
+    <p style="font-size:13px;color:#999;">
+      계속 무료로 받아보셔도 됩니다. 뉴스레터는 무료 구독자분께도 동일하게 발송됩니다.
+    </p>
+  </div>
+  <div class="footer">
+    Desert to Cape · 매주 수요일 발행<br>
+    <a href="{{unsubscribe_url}}" style="color:#C9A96E;">수신 거부</a>
+  </div>
+</div>
+</body>
+</html>
