@@ -7,7 +7,7 @@ import json
 import requests
 from datetime import datetime, UTC
 
-GEMINI_API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+GEMINI_API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
 
 def _call_gemini(prompt: str, max_tokens: int = 600) -> str:
